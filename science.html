@@ -134,9 +134,9 @@
 
 <body>
     <div class="container">
-        <h1>The Science Behind Lawn Command: Precision Turf Management</h1>
+        <h1>The Science Behind Lawn Command: Bringing Golf Course Precision to Your Backyard</h1>
         <p class="subtitle">How biological models, weather intelligence, and AI diagnostics are transforming home lawn
-            care from guesswork into precision agriculture.</p>
+            care from guesswork into precision agriculture</p>
 
         <section id="introduction">
             <h2>The Calendar Problem: Why Traditional Lawn Care is Fundamentally Flawed</h2>
@@ -147,77 +147,219 @@
                     time</strong>.</p>
             <p>While your neighbor is force-feeding nitrogen to grass that can't metabolize it (sending 40% of it into
                 the watershed), professional golf course superintendents are making decisions based on accumulated heat
-                units, soil physics, and metabolic demand curves. <strong>Lawn Command brings that same precision to
-                    your backyard.</strong></p>
+                units, soil physics, and metabolic demand curves. They don't guess when to feed—they let the science
+                tell them.</p>
+            <p><strong>Lawn Command brings that same precision to your backyard.</strong></p>
         </section>
 
         <section id="models">
             <h2>The Scientific Foundation: Four Core Models Working in Concert</h2>
 
             <h3>1. Growing Degree Days (GDD): The Biological Odometer</h3>
-            <p>Growing Degree Days is the metric professional agronomists use to predict plant development, pest
-                emergence, and optimal treatment windows. It's a cumulative measure of thermal energy—the "odometer" of
-                your lawn's season.</p>
-            <p><code>GDD = Max(0, ((Daily High + Daily Low) / 2) - 50°F)</code></p>
-            <p><strong>Why 50°F?</strong> That's the base temperature where turfgrass metabolism activates. Below 50°F,
-                the grass essentially idles. Above it, every degree counts as fuel for growth.</p>
+            <p>Growing Degree Days is the metric that professional agronomists use to predict plant development, pest
+                emergence, and optimal treatment windows. It's a cumulative measure of thermal energy—essentially, a
+                biological clock that counts the heat units your lawn has experienced.</p>
 
-            <h4>Real-World Application: Crabgrass Prevention</h4>
-            <p>Crabgrass germinates between <strong>50-100 GDD</strong> after soil reaches 55°F. Apply too early and the
-                barrier degrades; apply too late and you miss the sprout. Lawn Command tracks GDD from a zone-specific
-                reset date (scaled by your USDA Hardiness Zone) and alerts you at the exact moment the biological window
-                opens.</p>
+            <h4>The Formula</h4>
+            <pre><code>GDD = Max(0, ((Daily High + Daily Low) / 2) - 50°F)</code></pre>
+
+            <p><strong>Why 50°F?</strong> That's the base temperature where turfgrass metabolism activates. Below 50°F,
+                the grass essentially idle. Above it, every degree counts as fuel for growth.</p>
+
+            <h4>Real-World Application</h4>
+            <p><strong>Crabgrass Prevention</strong>: The most expensive mistake homeowners make is applying
+                pre-emergent herbicide based on dates instead of heat accumulation. Crabgrass germinates between
+                <strong>50-100 GDD</strong> after soil reaches 55°F. Apply too early (say, in February when your lawn
+                has only accumulated 20 GDD), and the chemical barrier degrades before the weed ever sprouts. Apply at
+                95 GDD? Perfect timing.</p>
+            <p>Lawn Command tracks GDD from a <strong>zone-specific reset date</strong> (based on your USDA Hardiness
+                Zone and last frost) and alerts you when you hit critical thresholds:</p>
+            <ul>
+                <li><strong>150 GDD</strong>: Pre-emergent window opening</li>
+                <li><strong>300-400 GDD</strong>: Warm-season grass dormancy break</li>
+                <li><strong>100 GDD</strong>: Cool-season grass active growth begins</li>
+            </ul>
+            <p>Golf courses pay meteorological consultants for this data. Lawn Command delivers it for free,
+                hyper-localized to your exact coordinates.</p>
 
             <h3>2. Growth Potential (GP): The Metabolic Speedometer</h3>
-            <p>Developed by Pace Turf, <strong>Growth Potential</strong> quantifies how efficiently grass can
-                photosynthesize at a given temperature. It's the difference between knowing <em>when</em> to fertilize
-                and knowing <em>how much</em>.</p>
-            <p><code>GP = e^(-0.5 × ((T - T_optimal) / σ)²)</code></p>
-            <p>Where T is mean temp, and T_optimal is the sweet spot for your specific grass (67.5°F for cool-season,
-                87.5°F for warm-season).</p>
+            <p>Here's where Lawn Command diverges from even advanced DIY apps. <strong>Growth Potential</strong> is a
+                concept developed by Pace Turf (Gelernter & Stowell, 2005) that quantifies how efficiently grass can
+                photosynthesize and metabolize nutrients at a given temperature.</p>
+            <p>It's the difference between knowing <strong>when</strong> to fertilize and knowing <strong>how
+                    much</strong> to fertilize.</p>
 
-            <h4>The Advantage</h4>
-            <p>Lawn Command scales your suggested nitrogen rates proportionally to GP. If GP is 0.60, we recommend
-                applying 60% of your peak feeding rate. If GP is < 0.10, <strong>fertilization is blocked
-                    entirely</strong> to prevent plant stress and nutrient leaching.</p>
+            <h4>The Pace Turf Model</h4>
+            <pre><code>GP = e^(-0.5 × ((T - T_optimal) / σ)²)</code></pre>
+            <p>Where:</p>
+            <ul>
+                <li><code>T</code> = mean daily temperature (°F)</li>
+                <li><code>T_optimal</code> = optimal growth temp (67.5°F for cool-season, 87.5°F for warm-season)</li>
+                <li><code>σ</code> = standard deviation (10°F cool, 12°F warm)</li>
+            </ul>
+            <p>This produces a <strong>0 to 1 scale</strong>:</p>
+            <ul>
+                <li><strong>GP = 1.00</strong> → Peak metabolism. Grass can utilize maximum nitrogen.</li>
+                <li><strong>GP = 0.50</strong> → Active growth. Reduce input rates proportionally.</li>
+                <li><strong>GP < 0.10</strong> → Near-dormancy. <strong>Fertilization is blocked entirely.</strong></li>
+            </ul>
+
+            <h4>How Superintendents Use This</h4>
+            <p>On a PGA Tour golf course, the superintendent doesn't apply a fixed rate of fertilizer every week. They
+                scale their nitrogen applications <strong>linearly with GP</strong>. If GP is 0.60, they apply 60% of
+                their peak feeding rate. If GP is 0.15, they hold off entirely to avoid stress.</p>
+
+            <h4>How Lawn Command Uses This</h4>
+            <p>When you log an application in Lawn Command, the recommendation engine:</p>
+            <ol>
+                <li><strong>Calculates current GP</strong> from your local weather data</li>
+                <li><strong>Retrieves your grass type's annual N budget</strong> (e.g., Bermuda: 3-5 lbs N/1k sqft)</li>
+                <li><strong>Adjusts the budget</strong> based on zone conditions:
+                    <ul>
+                        <li>Deep shade? Reduce by 50%</li>
+                        <li>Poor drainage? Reduce by 10%</li>
+                        <li>USDA Zone 4? Reduce by 15% (shorter growing season)</li>
+                    </ul>
+                </li>
+                <li><strong>Scales the suggested rate</strong> proportionally to GP</li>
+            </ol>
+            <p><strong>Example</strong>: You have Bermuda grass at GP = 0.72 in June. Your persona is "Yard of the
+                Month" (targeting 4 lbs N annually). The app recommends:</p>
+            <pre><code>Suggested Rate: 0.72 lbs N per 1k sqft
+Reasoning: "GP is 0.72 (active growth). This fits within your seasonal budget and matches current metabolic demand."</code></pre>
+            <p>Compare this to the bag of "Step 2" at the store, which tells you to apply 1 lb N regardless of
+                temperature, grass type, or current nutrition status.</p>
+            <p><strong>This is the secret sauce.</strong> We're not just tracking what you apply—we're validating it
+                against real-time metabolic capacity.</p>
 
             <h3>3. The 140 Rule: Thermal Stress Protection</h3>
-            <p>Every cool-season lawn owner knows the "July slump." The problem isn't just heat; it's the combination of
-                heat and humidity. We implement a professional safety guardrail called the <strong>140 Rule</strong>:
-            </p>
-            <p><code>Air Temperature (°F) + Relative Humidity (%) > 140</code></p>
-            <p>Above this threshold, grass stops transpiring effectively. Their stomata close, metabolism crashes, and
-                any nitrogen applied becomes a liability. When the 140 Rule triggers, Lawn Command automatically pauses
-                fertilizer tasks and surfaces a coaching alert to raise your mowing height.</p>
+            <p>Every cool-season lawn owner knows the July slump—when your tall fescue or bluegrass turns brown and thin
+                despite watering. The problem isn't drought; it's <strong>heat-humidity stress</strong>.</p>
+            <p>Professional turf managers use a safety guardrail called the <strong>140 Rule</strong>:</p>
+            <pre><code>Air Temperature (°F) + Relative Humidity (%) > 140</code></pre>
+            <p>Above this threshold, cool-season grasses <strong>stop transpiring effectively</strong>. Their stomata
+                close, metabolism crashes, and any nitrogen you apply becomes a liability—triggering either burn or
+                disease.</p>
+
+            <h4>What Golf Courses Do</h4>
+            <p>When the 140 Rule triggers, superintendents:</p>
+            <ul>
+                <li>Halt all fertilization</li>
+                <li>Raise mowing height to protect the crown</li>
+                <li>Increase irrigation frequency but reduce volume per cycle</li>
+                <li>Apply preventative fungicide (because Brown Patch thrives in this zone)</li>
+            </ul>
+
+            <h4>What Lawn Command Does</h4>
+            <p>When your local weather hits the 140 threshold, the app:</p>
+            <ul>
+                <li><strong>Automatically blocks fertilizer tasks</strong> from appearing in your task feed</li>
+                <li><strong>Surfaces a coaching task</strong>: <em>"Raise your mowing height to 3.5-4.0" to reduce
+                        stress"</em></li>
+                <li><strong>Alerts you to fungicide windows</strong> if GP and humidity align with disease pressure</li>
+            </ul>
+            <p>Your neighbor's app? It still tells them to fertilize because "it's Week 8 of the program."</p>
 
             <h3>4. Evapotranspiration (ET): Smart Irrigation Science</h3>
-            <p>How much water is your lawn actually losing? Most people guess. Golf courses measure. Lawn Command uses a
-                <strong>simplified Hargreaves Model</strong> to calculate daily ET:</p>
-            <p><code>ET₀ = 0.0023 × Ra × √(T_max - T_min) × (T_mean + 17.8)</code></p>
-            <p>By tracking rainfall against ET loss, the app issues <strong>"Skip Watering Today"</strong> tasks that
-                can save 10,000+ gallons of water per season on a typical home lawn.</p>
+            <p>How much water is your lawn actually losing to evaporation and plant transpiration? Most people guess.
+                Golf courses measure.</p>
+            <p>Lawn Command uses a <strong>simplified Hargreaves Model</strong> to calculate daily ET:</p>
+            <pre><code>ET₀ = 0.0023 × Ra × √(T_max - T_min) × (T_mean + 17.8)</code></pre>
+            <p>Where:</p>
+            <ul>
+                <li><code>Ra</code> = Extraterrestrial radiation (calculated from latitude and day of year)</li>
+                <li><code>T_max</code>, <code>T_min</code> = Daily temperature range</li>
+            </ul>
+
+            <h4>The Payoff</h4>
+            <p>This allows the app to issue <strong>"Skip Watering Today"</strong> tasks when:</p>
+            <ul>
+                <li>Recent rainfall exceeds ET loss</li>
+                <li>Forecast shows rain within 24 hours</li>
+                <li>ET indicator is "Low" (cloudy, cool, no wind)</li>
+            </ul>
+            <p>Over a growing season, this can save <strong>10,000+ gallons of water</strong> on a typical 5,000 sqft
+                lawn.</p>
         </section>
 
         <section id="intelligence">
-            <h2>The Intelligence Layer: AI Diagnostics and Adaptive Coaching</h2>
-            <h3>Turf-Check: AI-Powered Pathology</h3>
-            <p>Lawn Command integrates vision models to analyze turf photos. But identification is only half the battle.
-                We cross-reference every diagnosis with your <strong>recent application history</strong> and
-                <strong>current weather context</strong>.</p>
-            <p><em>"Brown Patch fungus detected. Efficacy high due to recent nitrogen application during 140 Rule
-                    stress. Recommendation: Switch to preventative fungicide and withhold N."</em></p>
+            <h2>The Intelligence Layer: AI Diagnostics and Contextual Task Generation</h2>
 
-            <h3>Contextual Task Generation</h3>
-            <p>Lawn Command generates dynamic, zone-specific tasks based on:</p>
+            <h3>Turf-Check: AI-Powered Pathology</h3>
+            <p>Lawn Command integrates <strong>GPT-4 Vision (Gemini Flash)</strong> to analyze close-up photos of your
+                turf. But it doesn't stop at identification—it cross-references the diagnosis with your <strong>recent
+                    application history</strong> and <strong>current weather context</strong>.</p>
+
+            <div class="case-study">
+                <h4>Example Workflow:</h4>
+                <ol>
+                    <li>You snap a photo of brown patches in your lawn</li>
+                    <li>The AI identifies: "Likely Brown Patch fungus (Rhizoctonia solani), Confidence: 85%"</li>
+                    <li>The app checks your logs and sees:
+                        <ul>
+                            <li>Last fertilizer application: 5 days ago, 0.75 lb N</li>
+                            <li>Current weather: 82°F, 95% humidity (140 Rule triggered)</li>
+                            <li>Recent soil moisture: High</li>
+                        </ul>
+                    </li>
+                    <li><strong>Contextual insight</strong>: "Brown Patch is thriving due to recent nitrogen application
+                        during heat stress. Avoid watering at night. Consider fungicide with azoxystrobin."</li>
+                </ol>
+            </div>
+            <p>This is <strong>diagnostic medicine for your lawn</strong>, not just image recognition.</p>
+
+            <h3>Task Generation: The Personalized Coaching Engine</h3>
+            <p>Lawn Command doesn't give you a generic 12-step program. It generates <strong>dynamic, zone-specific
+                    tasks</strong> based on:</p>
             <ul>
-                <li><strong>Grass Type:</strong> Bermuda vs Fescue require different timing.</li>
-                <li><strong>Metabolic State:</strong> Driven by GDD and GP.</li>
-                <li><strong>Weather Hazards:</strong> Pre-emptive alerts for rain, heat waves, and humidity spikes.</li>
-                <li><strong>User Persona:</strong> From "Low Maintenance" essentials to "Yard of the Month" precision.
-                </li>
-                <li><strong>Nutrient Budget:</strong> Automatic tracking to ensure you don't exceed annual N-P-K limits.
-                </li>
+                <li>Grass type (Bermuda, Zoysia, Fescue, etc.)</li>
+                <li>Current GDD accumulation</li>
+                <li>Growth Potential</li>
+                <li>Weather forecast (rain, heat, humidity)</li>
+                <li>Application history (when did you last fertilize?)</li>
+                <li>User persona (Low Maintenance, Enthusiast, or Yard of the Month)</li>
+                <li>Nutrient budget status (have you hit your annual N limit?)</li>
             </ul>
+
+            <h4>Examples of Intelligent Task Triggers</h4>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Task</th>
+                        <th>Trigger Logic</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Apply Pre-Emergent</strong></td>
+                        <td>GDD between 150-400 AND soil temp sustained at 55°F for 3 days AND no pre-emergent in last
+                            120 days</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Time to Scalp</strong></td>
+                        <td>Warm-season grass at GDD > 300 AND mow count this season = 0</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Raise Mowing Height</strong></td>
+                        <td>140 Rule active for 2+ consecutive days</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Iron Application</strong></td>
+                        <td>GP > 0.50 AND no iron in last 45 days AND persona = "Yard of the Month"</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Skip Watering Today</strong></td>
+                        <td>Forecast rain > 0.25" in next 24 hours OR recent rain > ET loss over last 3 days</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Fungicide Window</strong></td>
+                        <td>Cool-season grass + night temp > 60°F + humidity > 85% for 3+ nights + no fungicide in 21
+                            days</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>This is <strong>prescriptive intelligence</strong>. Not a static checklist—an adaptive coaching system
+                that evolves with the weather and your lawn's biology.</p>
         </section>
 
         <section id="comparison">
@@ -232,52 +374,117 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td>GDD Tracking</td>
-                        <td>Consultant Reports</td>
-                        <td>Automated, Local API</td>
+                        <td><strong>GDD Tracking</strong></td>
+                        <td>Weather station + consultant reports</td>
+                        <td>Automated, hyper-local via Open-Meteo API</td>
                     </tr>
                     <tr>
-                        <td>Growth Potential</td>
-                        <td>PACE Turf Software</td>
-                        <td>Built-in Algorithms</td>
+                        <td><strong>Growth Potential</strong></td>
+                        <td>Manual calculations or PACE Turf software</td>
+                        <td>Built-in, auto-scaled to grass type</td>
                     </tr>
                     <tr>
-                        <td>Soil Temperature</td>
-                        <td>Buried Sensors (4")</td>
-                        <td>Thermodynamic Models</td>
+                        <td><strong>Soil Temperature</strong></td>
+                        <td>Buried sensors at 4" depth</td>
+                        <td>Estimated from 7-day air temp average</td>
                     </tr>
                     <tr>
-                        <td>Nutrient Budgeting</td>
-                        <td>Excel Spreadsheets</td>
-                        <td>Automatic per-zone tracking</td>
+                        <td><strong>Nutrient Budgeting</strong></td>
+                        <td>Spreadsheets + lab soil tests</td>
+                        <td>Automatic tracking per zone, warns at budget limits</td>
                     </tr>
                     <tr>
-                        <td>Irrigation Scheduling</td>
-                        <td>ET-based Controllers</td>
-                        <td>ET "Skip Watering" Tasks</td>
+                        <td><strong>Application Rate Calc</strong></td>
+                        <td>Tank mix calculator + label math</td>
+                        <td>One-tap calculator with rate validation</td>
                     </tr>
                     <tr>
-                        <td>Disease Forecasting</td>
-                        <td>Historical Logs + Models</td>
-                        <td>AI Vision + History</td>
+                        <td><strong>Disease Forecasting</strong></td>
+                        <td>NAPIS models + historical logs</td>
+                        <td>AI vision + weather correlation</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Irrigation Scheduling</strong></td>
+                        <td>ET-based controllers (Rain Bird IQ4)</td>
+                        <td>ET calculation + "Skip Watering" tasks</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Pre-Emergent Timing</strong></td>
+                        <td>Soil temp monitoring + GDD milestones</td>
+                        <td>Automated alerts at 55°F soil + GDD windows</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Reapplication Intervals</strong></td>
+                        <td>Manual GDD tracking + product labels</td>
+                        <td>Product-specific GDD counters with notifications</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Record Keeping</strong></td>
+                        <td>Expensive GCSAA software</td>
+                        <td>Built-in treatment logs with weather snapshots</td>
                     </tr>
                 </tbody>
             </table>
+            <p><strong>The Gap Is Closing.</strong> What used to require a $100k/year salary, weather stations, and
+                commercial software is now in your pocket.</p>
+        </section>
+
+        <section id="advantage">
+            <h2>The Lawn Command Advantage: Why It's Superior to "Just Following the Bag"</h2>
+
+            <h3>1. Localized, Real-Time Data</h3>
+            <p>Pre-made lawn programs assume everyone in your zip code has the same conditions. Lawn Command knows:</p>
+            <ul>
+                <li>Your <strong>exact coordinates</strong> (micro-climate variations)</li>
+                <li>Your <strong>specific grass types</strong> (you can have Bermuda in sun, Fescue in shade)</li>
+                <li>Your <strong>zone conditions</strong> (shade, drainage, slope)</li>
+                <li>Your <strong>personalized goals</strong> (Low Maintenance vs. Championship Quality)</li>
+            </ul>
+
+            <h3>2. Biological Timing, Not Calendar Timing</h3>
+            <p>The bag says "Apply in early April." Lawn Command says "Apply when you hit 180 GDD and soil temp sustains
+                at 55°F for 3 days"—which might be March 15 in Atlanta or May 1 in Minneapolis.</p>
+
+            <h3>3. Nutrient Budget Enforcement</h3>
+            <p>Over-fertilization is the #1 cause of lawn disease, environmental runoff, and thatch buildup. Lawn
+                Command tracks every gram of N-P-K you apply and <strong>warns you</strong> before you exceed safe
+                annual limits.</p>
+
+            <h3>4. Weather-Aware Guardrails</h3>
+            <p>The bag doesn't know it's 95°F with 90% humidity. Lawn Command does, and it <strong>blocks bad
+                    decisions</strong> before you make them:</p>
+            <ul>
+                <li>❌ No fertilizer during 140 Rule stress</li>
+                <li>❌ No pre-emergent when GDD window has closed</li>
+                <li>❌ No watering when rain is forecast</li>
+            </ul>
+
+            <h3>5. Adaptive Learning from Your Actions</h3>
+            <p>Every application you log teaches the system how to better coach you, tracking GDD-based counters for
+                reapplications and shifting task priorities as you approach budget limits.</p>
         </section>
 
         <section id="proprietary">
-            <h2>Proprietary Algorithms: The Secret Sauce</h2>
-            <p>While the models (GDD, GP, ET) are established turf science, the <strong>orchestration</strong> is where
-                Lawn Command is unique:</p>
-            <ul>
-                <li><strong>Persona-Scaled Recommendations:</strong> Your budget and intensity are tailored to your
-                    goals.</li>
-                <li><strong>Cross-Product Compatibility:</strong> Smart checks for tank-mix precipitation risks.</li>
-                <li><strong>Multi-Zone Optimization:</strong> Independent tracking for front vs. back yard varieties.
-                </li>
-                <li><strong>AI Diagnostic Context Engine:</strong> Temporal and historical correlation for pathology.
-                </li>
-            </ul>
+            <h2>The Secret Sauce: Proprietary Algorithms You Won't Find Anywhere Else</h2>
+            <p>While the <strong>scientific models</strong> (GDD, GP, ET) are established turf science, the
+                <strong>integration and orchestration</strong> is where Lawn Command becomes unique:</p>
+
+            <h3>1. Persona-Scaled Recommendations</h3>
+            <p>Your buddy with the same grass type gets different recommendations if they're "Low Maintenance" vs. your
+                "Yard of the Month" persona. The app scales target nitrogen ranges, task frequency, and pro-feature
+                suggestions.</p>
+
+            <h3>2. Cross-Product Compatibility Checks</h3>
+            <p>Planning a tank mix? The app knows the chemistry, warning you if products like iron and phosphite might
+                precipitate.</p>
+
+            <h3>3. Multi-Zone Optimization</h3>
+            <p>Lawn Command generates <strong>separate task feeds</strong> for each of your zones, tracking GDD, GP, and
+                budgets independently just like a professional sports field manager.</p>
+
+            <h3>4. AI Diagnostic Context Engine</h3>
+            <p>The Turf-Check vision model doesn't just ID the problem. It correlates recent nitrogen spikes, drought
+                stress, and the time of year to provide multi-modal intelligence.</p>
         </section>
 
         <section id="scenarios">
@@ -285,48 +492,85 @@
 
             <div class="case-study">
                 <h3>Example 1: The Early Spring Trap</h3>
-                <p><strong>Scenario:</strong> March 5, first warm day. Neighbors apply "Step 1" on dormant grass.</p>
-                <p><strong>Lawn Command:</strong> Analyzes GP (0.05) and Soil Temp (48°F) and tells you to
-                    <strong>Wait</strong>. Two weeks later, at perfect biological timing (120 GDD, 55°F soil), you apply
-                    a scaled dose. Your grass metabolizes the nutrients; your neighbor's leaches into the drain.</p>
+                <p><strong>Scenario</strong>: March 5, first 70°F day in Kansas City. Neighbor applies "Step 1" (28-0-3
+                    at 1 lb N/1k). Lawn Command User's App shows GP = 0.08, GDD = 45, Soil Temp = 48°F → <strong>"Wait 2
+                        weeks"</strong>.</p>
+                <p><strong>Result</strong>: By March 20, GDD = 120, Soil = 55°F, GP = 0.35. User applies 0.35 lb N
+                    (scaled to GP) with pre-emergent. Grass metabolizes it efficiently. Neighbor's nitrogen? Mostly
+                    leached into the storm drain.</p>
             </div>
 
             <div class="case-study">
                 <h3>Example 2: The Summer Stress Save</h3>
-                <p><strong>Scenario:</strong> July heatwave hits with 140 Rule triggered (153 total).</p>
-                <p><strong>Lawn Command:</strong> Automatically hides fertilizer tasks to prevent burn and instructs you
-                    to raise mowing height. Your lawn survives the stress while others thin out and brown.</p>
+                <p><strong>Scenario</strong>: July heatwave, Tall Fescue lawn in North Carolina. 88°F + 65% humidity =
+                    <strong>153 (140 Rule triggered)</strong>.</p>
+                <p><strong>Result</strong>: Neighbor's app says "Week 12: Apply Summer Fertilizer." Lawn Command ❌
+                    blocks fertilizer and ✅ tasks the user to raise their mowing height to 4 inches. Neighbor's lawn
+                    develops Brown Patch; user's stays green.</p>
             </div>
 
             <div class="case-study">
                 <h3>Example 3: The Fungicide Window</h3>
-                <p><strong>Scenario:</strong> Seattle Ryegrass in late spring with 90%+ humidity.</p>
-                <p><strong>Lawn Command:</strong> Detects "Red Thread" risk via weather correlation <em>before</em>
-                    symptoms are widespread. Recommends Azoxystrobin based on the current night-temp spike.</p>
+                <p><strong>Scenario</strong>: Perennial Ryegrass in Seattle, late spring. AI Scan detects Red Thread
+                    fungus.</p>
+                <p><strong>Recommendation</strong>: "Apply azoxystrobin-based fungicide tonight. Red Thread thrives in
+                    cool, humid conditions with moderate nitrogen (caught via your N-log 12 days ago). Consider reducing
+                    next N application by 20%."</p>
             </div>
+        </section>
+
+        <section id="overkill">
+            <h2>Is This Overkill?</h2>
+            <p><strong>Short answer</strong>: Only if you think golf courses are overkill.</p>
+            <p><strong>Long answer</strong>: The difference between a good lawn and a great lawn isn't effort—it's
+                <strong>precision</strong>. Lawn Command ensures your inputs are applied at the right biological moment,
+                dosed to current metabolic capacity, and validated against safety guardrails. It's not about doing
+                <em>more</em> work. It's about doing <em>smarter</em> work.</p>
+        </section>
+
+        <section id="bottom-line">
+            <h2>The Bottom Line: Science-Backed, Weather-Driven, Turf-Obsessed</h2>
+            <p>For decades, homeowners have been stuck with DIY guesswork or expensive professional services.
+                <strong>Lawn Command is the third option</strong>: Professional-grade intelligence, in your pocket,
+                replacing guesswork with biological science. Golf course superintendents have been doing this for
+                decades. Now, so can you.</p>
+        </section>
+
+        <section id="ready">
+            <h2>Ready to Command Your Lawn?</h2>
+            <p><strong>Download Lawn Command</strong> and stop guessing. Your lawn will thank you.</p>
+            <p><em>Science-backed. Weather-driven. Turf-obsessed.</em></p>
         </section>
 
         <section id="references">
             <h2>Technical References</h2>
-            <ul style="font-size: 0.85rem; color: #8B9B8E;">
-                <li>Gelernter, W. & Stowell, L. (2005). <em>Growth Potential: An Improved Model for Managing Turfgrass
-                        Growth.</em></li>
-                <li>Hargreaves, G.H. & Samani, Z.A. (1985). <em>Reference Crop Evapotranspiration from Temperature.</em>
-                </li>
-                <li>McMaster, G.S. & Wilhelm, W.W. (1997). <em>Growing Degree Days: One Equation, Two
-                        Interpretations.</em></li>
-                <li>Beard, J.B. (2002). <em>Turf Management for Golf Courses.</em></li>
-            </ul>
+            <ol style="font-size: 0.85rem; color: #8B9B8E;">
+                <li><strong>Pace Turf Growth Potential Model</strong>: Gelernter, W. & Stowell, L. (2005). "Growth
+                    Potential: An Improved Model for Managing Turfgrass Growth and Inputs." PACE Turf.</li>
+                <li><strong>Hargreaves ET Model</strong>: Hargreaves, G.H. & Samani, Z.A. (1985). "Reference Crop
+                    Evapotranspiration from Temperature." Applied Engineering in Agriculture.</li>
+                <li><strong>GDD Calculation Standards</strong>: McMaster, G.S. & Wilhelm, W.W. (1997). "Growing Degree
+                    Days: One Equation, Two Interpretations." Agricultural and Forest Meteorology.</li>
+                <li><strong>140 Rule for Cool-Season Stress</strong>: Beard, J.B. (2002). "Turf Management for Golf
+                    Courses." Ann Arbor Press.</li>
+            </ol>
+        </section>
+
+        <section id="about" style="border-top: 1px solid #1E2422; margin-top: 4rem; padding-top: 2rem;">
+            <h3>About Lawn Command</h3>
+            <p style="font-size: 0.9rem; color: #8B9B8E;">Lawn Command is a precision turf management app built by Brett
+                Adams, combining real-time weather intelligence and biological models to transform home lawn care into
+                data-driven horticulture.</p>
         </section>
 
         <div class="footer">
-            <p>Lawn Command: Science-backed. Weather-driven. Turf-obsessed.</p>
             <p>© 2026 Brett Adams. All rights reserved.</p>
             <p><a href="https://lawncommand.app">lawncommand.app</a> | <a href="index.html">← Back to Legal &
                     Support</a></p>
         </div>
     </div>
 </body>
+
 
 
 
