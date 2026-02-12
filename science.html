@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Science of Lawn Command — Precision Turf Management</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #0D0F0E;
+            color: #E8EDE9;
+            line-height: 1.7;
+            padding: 2rem 1rem;
+        }
+
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            color: #4ADE80;
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            line-height: 1.2;
+        }
+
+        .subtitle {
+            color: #8B9B8E;
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            font-style: italic;
+        }
+
+        h2 {
+            color: #A7F3D0;
+            font-size: 1.5rem;
+            margin-top: 3rem;
+            margin-bottom: 1rem;
+            border-bottom: 1px solid #1E2422;
+            padding-bottom: 0.5rem;
+        }
+
+        h3 {
+            color: #4ADE80;
+            font-size: 1.15rem;
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        p,
+        li {
+            color: #C5D0C8;
+            margin-bottom: 1rem;
+        }
+
+        ul {
+            padding-left: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        code {
+            background: #1A1D1B;
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+            font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+            font-size: 0.9em;
+            color: #A7F3D0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            background: #141715;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        th,
+        td {
+            text-align: left;
+            padding: 1rem;
+            border-bottom: 1px solid #1E2422;
+        }
+
+        th {
+            background: #1E3A2A;
+            color: #4ADE80;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .case-study {
+            background: #1E2422;
+            padding: 1.5rem;
+            border-left: 4px solid #4ADE80;
+            border-radius: 4px;
+            margin: 2rem 0;
+        }
+
+        .case-study h3 {
+            margin-top: 0;
+        }
+
+        .footer {
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid #1E2422;
+            color: #4A5A4D;
+            font-size: 0.85rem;
+            text-align: center;
+        }
+
+        a {
+            color: #4ADE80;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Precision Turf Management: The Science Behind Lawn Command</h1>
+        <p class="subtitle">How localized data and biological models are replacing the "best guess" era of lawn care.
+        </p>
+
+        <p>Most homeowners treat their lawns on a calendar-based schedule: "It's Saturday, so I'll fertilize." At Lawn
+            Command, we believe the calendar is the wrong metric. Your lawn doesn't run on dates; it runs on
+            <strong>biological milestones</strong> triggered by heat accumulation and soil physics.</p>
+
+        <p>By integrating real-time weather data with established turf science models, Lawn Command transforms your
+            phone into a precision diagnostic engine. Here is the science behind the command.</p>
+
+        <h2>🔬 Growing Degree Days (GDD)</h2>
+        <h3>The Odometer of Biological Growth</h3>
+        <p>Growing Degree Days (GDD) is a measure of heat accumulation used by agronomists to predict plant development
+            and pest emergence. Unlike air temperature, which fluctuates, GDD is a cumulative "score" of the energy
+            available to your lawn.</p>
+
+        <h3>How it Works</h3>
+        <p>We calculate GDD using the simple average method:</p>
+        <p><code>GDD = Max(0, ((Daily High + Daily Low) / 2) - 50°F)</code></p>
+
+        <ul>
+            <li><strong>The Trigger:</strong> 50°F is the standard base temperature for turfgrass.</li>
+            <li><strong>The Application:</strong> Crabgrass, for example, begins germinating between 50 and 100 GDD.
+                Lawn Command tracks this accumulation from a localized "Reset Date" based on your USDA Hardiness Zone.
+            </li>
+            <li><strong>The Value:</strong> You apply pre-emergent barriers exactly when the biological window
+                opens—never too early to leach, never too late to miss the sprout.</li>
+        </ul>
+
+        <h2>📈 Growth Potential (GP)</h2>
+        <h3>The Pace Turf Metabolic Speedometer</h3>
+        <p>While GDD tells us <em>when</em>, Growth Potential (GP) tells us <em>how fast</em>. Developed by Pace Turf,
+            the GP model determines how optimal current temperatures are for photosynthesis and growth.</p>
+
+        <h3>The Linear Nitrogen Scale</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Growth Potential</th>
+                    <th>Growth State</th>
+                    <th>Nitrogen Target (lb N/1k)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>&lt; 0.10</strong></td>
+                    <td>Stressed / Near-Dormant</td>
+                    <td><strong>0.00</strong> (Blocked)</td>
+                </tr>
+                <tr>
+                    <td><strong>0.50</strong></td>
+                    <td>Active Growth</td>
+                    <td><strong>0.50 - 0.60</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>1.00</strong></td>
+                    <td>Peak Metabolism</td>
+                    <td><strong>1.00</strong> (Full Feeding)</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>🛡️ The "140 Rule"</h2>
+        <h3>Thermal Stress Protection</h3>
+        <p>For cool-season grasses (Fescue, Bluegrass), heat and humidity are a dangerous combination. We implement a
+            safety guardrail known as the "140 Rule."</p>
+        <ul>
+            <li><strong>The Equation:</strong> <code>Air Temp (°F) + Relative Humidity (%) > 140</code></li>
+            <li><strong>The Risk:</strong> Above this threshold, cool-season grasses stop transpiring effectively,
+                making them highly susceptible to nitrogen burn and fungal diseases.</li>
+            <li><strong>The Command:</strong> Lawn Command automatically blocks fertilization tasks and alerts you to
+                raise your mower height to protect the crown of the plant.</li>
+        </ul>
+
+        <h2>🧪 Soil Physics & The 55°F Threshold</h2>
+        <p>Air temperature can be deceptive. For weed prevention, soil temperature at a <strong>4" depth</strong> is the
+            only metric that matters.</p>
+        <p>Lawn Command monitors soil thermodynamics to find the <strong>55°F Sustainment</strong>. This is the point
+            where crabgrass germination becomes inevitable. By tracking the lag between air and soil, we give you a
+            precise countdown to your "last chance" for a clean lawn.</p>
+
+        <h2>🌊 Evapotranspiration (ET)</h2>
+        <h3>Smart Irrigation with the Hargreaves Model</h3>
+        <p>How much water is actually leaving your soil? We use a simplified Hargreaves Model to calculate daily water
+            loss derived from your precise latitude and thermal range.</p>
+        <p>This allows Lawn Command to issue a <strong>"Skip Watering"</strong> command when the loss-to-gain ratio is
+            favorable, saving thousands of gallons of water per season.</p>
+
+        <div class="case-study">
+            <h3>Real-World Impact: The Early Spring Trap</h3>
+            <p>Every year, millions of homeowners waste money on "Step 1" treatments on the first warm Saturday of
+                March. While your neighbors are applying fertilizer to dormant grass, Lawn Command analyzes your 0.05
+                Growth Potential and 45°F Soil Temp and tells you to wait. Two weeks later, when the biological clock
+                hits 100 GDD, you apply a scaled dose that the lawn is actually ready to metabolize.</p>
+        </div>
+
+        <div class="footer">
+            <p>Lawn Command: Science-backed. Weather-driven. Turf-obsessed.</p>
+            <p>© 2026 Brett Adams. All rights reserved.</p>
+            <p><a href="index.html">← Back to Legal & Support</a></p>
+        </div>
+    </div>
+</body>
+
+</html>
