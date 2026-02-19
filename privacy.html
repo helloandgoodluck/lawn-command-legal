@@ -54,43 +54,48 @@
 <body>
     <div class="container">
         <h1>Privacy Policy</h1>
-        <p class="last-updated">Last updated: February 8, 2026</p>
+        <p class="last-updated">Last updated: February 19, 2026</p>
 
         <p>Lawn Command ("the App") is developed and operated by Brett Adams ("we", "us", "our"). This policy explains what information we collect, how we use it, and your rights regarding your data.</p>
 
         <h2>Information We Collect</h2>
-        <p><strong>Account Information:</strong> When you create an account, we collect your email address and password (stored securely via Supabase Authentication).</p>
+        <p><strong>Account Information:</strong> When you create an account, we collect your email address and authentication credentials. You may also sign in using Apple Sign-In. Credentials are stored securely via Supabase Authentication.</p>
         <p><strong>Location Data:</strong> We collect your address and geographic coordinates to provide accurate weather data, soil temperature estimates, and USDA hardiness zone calculations. Location is used only when you provide it during setup — we do not track your location in the background.</p>
-        <p><strong>Lawn Care Data:</strong> Information you enter about your lawn, including grass type, zone dimensions, treatment history, mowing logs, and product inventory.</p>
-        <p><strong>Photos:</strong> If you use the AI Turf-Check feature, photos are sent to Google's Gemini API for analysis. Photos are not stored on our servers after analysis is complete.</p>
-        <p><strong>Weather Data:</strong> We fetch weather information from third-party APIs (OpenWeather, Open-Meteo) based on your location. This data is cached to improve performance.</p>
+        <p><strong>Lawn Care Data:</strong> Information you enter about your lawn, including grass type, zone dimensions, treatment history, mowing logs, watering logs, and product inventory.</p>
+        <p><strong>Photos:</strong> If you use the AI Turf-Check feature, photos are uploaded to our servers for analysis via Google's Gemini API. Photos are stored securely in your account so you can view your scan history. You can delete individual scans at any time.</p>
+        <p><strong>Weather Data:</strong> We fetch weather information from third-party APIs based on your location. Weather data is collected automatically on a daily basis and cached on our servers to power the App's recommendations.</p>
+        <p><strong>Push Notification Token:</strong> If you enable notifications, we store a device token to send you lawn care reminders and alerts. You can disable notifications at any time in Settings.</p>
+        <p><strong>Local Device Data:</strong> The App stores preferences, cached data, and other non-sensitive information locally on your device to improve performance and enable offline functionality.</p>
 
         <h2>How We Use Your Information</h2>
         <ul>
             <li>To provide personalized lawn care recommendations based on your grass type, location, and climate</li>
-            <li>To calculate growing degree days (GDD), soil temperature, and seasonal guidance</li>
-            <li>To track your treatment and mowing history</li>
+            <li>To track your lawn care activity, including treatments, mowing, and watering</li>
             <li>To manage your product inventory (Digital Shed)</li>
-            <li>To provide AI-powered turf diagnostics</li>
+            <li>To provide AI-powered turf diagnostics and coaching</li>
+            <li>To send push notifications with lawn care reminders (if enabled)</li>
+            <li>To improve the quality of AI-generated recommendations</li>
         </ul>
 
         <h2>Third-Party Services</h2>
         <p>We use the following third-party services:</p>
         <ul>
-            <li><strong>Supabase</strong> — Authentication and database hosting</li>
-            <li><strong>Google Gemini AI</strong> — Turf image analysis (photos are processed and not retained)</li>
+            <li><strong>Supabase</strong> — Authentication, database hosting, and file storage</li>
+            <li><strong>Google Gemini AI</strong> — Turf image analysis and AI-generated coaching content</li>
+            <li><strong>Apple</strong> — Sign-In with Apple authentication</li>
             <li><strong>OpenWeather API</strong> — Current weather conditions</li>
             <li><strong>Open-Meteo</strong> — Historical and forecast weather data</li>
+            <li><strong>Expo / EAS</strong> — Push notification delivery</li>
         </ul>
 
-        <h2>Data Storage & Security</h2>
-        <p>Your data is stored securely on Supabase's cloud infrastructure with row-level security policies ensuring you can only access your own data. Passwords are hashed and never stored in plain text.</p>
+        <h2>Data Storage &amp; Security</h2>
+        <p>Your data is stored securely on Supabase's cloud infrastructure with row-level security policies ensuring you can only access your own data. Photos are stored in private, user-scoped storage buckets. Passwords are hashed and never stored in plain text.</p>
 
         <h2>Data Sharing</h2>
         <p><strong>We do not sell, trade, or share your personal information with third parties</strong> for marketing or advertising purposes. Data is only shared with the third-party services listed above as necessary to provide the App's functionality.</p>
 
-        <h2>Data Retention & Deletion</h2>
-        <p>You can delete your account and all associated data at any time from the Settings screen within the App. Upon deletion, all your lawn data, treatment history, and product inventory are permanently removed.</p>
+        <h2>Data Retention &amp; Deletion</h2>
+        <p>You can delete your account and all associated data at any time from the Settings screen within the App. Upon deletion, all your lawn data, treatment history, photos, and product inventory are permanently removed.</p>
 
         <h2>Children's Privacy</h2>
         <p>The App is not intended for use by children under 13. We do not knowingly collect information from children under 13.</p>
